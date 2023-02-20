@@ -24,10 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env.str("SECRET_KEY")
+SECRET_KEY = 'django-insecure-%^b_(35d!wq=b*rj*c3za%ph1=&)tp_o6q60z=%r7n$5k^xlkx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", default=False)
+
 
 ALLOWED_HOSTS = [".herokuapp.com", "localhost", "127.0.0.1"]
 
@@ -148,3 +149,11 @@ EMAIL_HOST_USER = "apikey"
 EMAIL_HOST_PASSWORD = "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"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+DEPLOY = True
+if DEPLOY:
+    # SECURE_HSTS_SECONDS = 60 # 無知にいじると危険なのでコメントアウト
+    SECURE_SSL_REDIRECT = True
+
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
