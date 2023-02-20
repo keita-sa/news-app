@@ -152,7 +152,7 @@ EMAIL_USE_TLS = True
 
 DEPLOY = True
 if DEPLOY:
-    # SECURE_HSTS_SECONDS = 60 # 無知にいじると危険なのでコメントアウト
+    SECURE_HSTS_SECONDS = 3600 # 無知にいじると危険なのでコメントアウト
     SECURE_SSL_REDIRECT = True
 
     SESSION_COOKIE_SECURE = True
